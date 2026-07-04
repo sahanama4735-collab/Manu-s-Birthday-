@@ -1,0 +1,882 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Bangaraa 🎂</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+min-height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#050816,#12082f,#240046,#09091f);
+position:relative;
+}
+
+/* Stars */
+body::before{
+content:'';
+position:absolute;
+width:200%;
+height:200%;
+background:
+radial-gradient(circle,#ffffff55 1px,transparent 1px);
+background-size:35px 35px;
+animation:starsMove 60s linear infinite;
+}
+
+@keyframes starsMove{
+from{transform:translateY(0);}
+to{transform:translateY(-500px);}
+}
+
+/* Aurora Glow */
+body::after{
+content:'';
+position:absolute;
+width:700px;
+height:700px;
+background:
+radial-gradient(circle,
+rgba(255,0,255,.25),
+rgba(0,255,255,.15),
+transparent 70%);
+filter:blur(90px);
+animation:aurora 8s ease-in-out infinite alternate;
+}
+
+@keyframes aurora{
+from{transform:translate(-200px,-100px);}
+to{transform:translate(200px,100px);}
+}
+
+/* Particles */
+.particle{
+position:absolute;
+width:6px;
+height:6px;
+background:white;
+border-radius:50%;
+opacity:.7;
+animation:float 10s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh) scale(0);
+}
+100%{
+transform:translateY(-100vh) scale(1);
+}
+}
+
+.container{
+width:90%;
+max-width:1200px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:80px;
+z-index:5;
+}
+/* =========================
+   HERO CONTENT (CENTER)
+========================= */
+.bear{
+    color:#ffffff;
+
+    font-size:50px;
+
+    margin:-15px 0 20px;   /* Moves it slightly upward */
+
+    position:relative;
+    z-index:5;
+
+    animation:bearFloat 3s ease-in-out infinite;
+
+    text-shadow:
+        0 0 8px rgba(255,255,255,.8),
+        0 0 15px rgba(255,220,240,.9),
+        0 0 25px rgba(255,170,210,.8),
+        0 0 40px rgba(255,120,190,.7);
+
+    filter:
+        drop-shadow(0 0 15px rgba(255,255,255,.7))
+        drop-shadow(0 0 30px rgba(255,170,210,.6));
+}
+
+@keyframes bearFloat{
+    0%,100%{
+        transform:translateY(-5px);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+}
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600;700&display=swap');
+
+/* PINK GLOW TEXT ONLY FOR H1 */
+
+/* =========================
+   PREMIUM 3D PINK GLOW H1
+========================= */
+
+h1{
+    font-family:'Great Vibes', cursive;
+    font-size:80px;
+    font-weight:500;
+    text-align:center;
+
+    color:#fff;
+
+    position:relative;
+
+    text-shadow:
+        0 0 8px rgba(255,105,180,.6),
+        0 0 15px rgba(255,105,180,.7),
+        0 0 25px rgba(255,105,180,.8),
+        0 0 40px rgba(255,105,180,.6),
+        0 0 80px rgba(255,105,180,.4);
+
+    animation:premiumGlow 3s ease-in-out infinite alternate;
+
+    transform:translateZ(0);
+}
+
+/* Extra glow aura behind text */
+
+h1::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:120%;
+    height:120%;
+
+    background:radial-gradient(circle,
+        rgba(255,105,180,.25),
+        transparent 60%);
+
+    filter:blur(25px);
+    z-index:-1;
+}
+
+/* Smooth glow breathing effect */
+
+@keyframes premiumGlow{
+
+    0%{
+        text-shadow:
+            0 0 5px rgba(255,120,190,.4),
+            0 0 15px rgba(255,80,170,.5),
+            0 0 30px rgba(255,60,150,.4),
+            0 0 50px rgba(255,60,150,.3);
+
+        transform:scale(1);
+    }
+
+    50%{
+        text-shadow:
+            0 0 10px rgba(255,200,230,.7),
+            0 0 25px rgba(255,120,190,.8),
+            0 0 50px rgba(255,70,170,.7),
+            0 0 90px rgba(255,50,150,.5);
+
+        transform:scale(1.02);
+    }
+
+    100%{
+        text-shadow:
+            0 0 15px rgba(255,220,240,.9),
+            0 0 35px rgba(255,120,190,.9),
+            0 0 70px rgba(255,70,170,.8),
+            0 0 120px rgba(255,40,140,.6);
+
+        transform:scale(1.04);
+    }
+}
+
+p{
+    width:min(800px,90%);
+    margin:auto;
+
+    font-size:21px;
+    line-height:1.9;
+
+    font-weight:600;   /* Change to 700 for extra bold */
+
+    color:rgba(255,255,255,.96);
+
+    text-shadow:
+        0 2px 8px rgba(0,0,0,.18);
+
+    animation:fadeUp 1.5s ease;
+
+    position:relative;
+    z-index:5;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+/* =========================
+        PREMIUM HEADER
+========================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:80px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    background:rgba(255,255,255,.08);
+
+    border-bottom:1px solid rgba(255,255,255,.18);
+
+    box-shadow:
+    0 8px 30px rgba(0,0,0,.12);
+
+    z-index:999;
+}
+
+header h3{
+
+    font-size:22px;
+    font-weight:700;
+    color:white;
+
+    letter-spacing:2px;
+    text-transform:uppercase;
+
+    text-shadow:0 0 10px rgba(255,255,255,.4);
+
+}
+
+
+/* ==========================
+      Ribbon Footer
+========================== */
+
+.footer-ribbon{
+position:fixed;
+bottom:25px;
+left:50%;
+transform:translateX(-50%);
+
+display:flex;
+align-items:center;
+gap:18px;
+
+padding:14px 35px;
+
+background:linear-gradient(
+135deg,
+rgba(255,255,255,.18),
+rgba(255,255,255,.08));
+
+border:1px solid rgba(255,255,255,.18);
+border-radius:100px;
+
+backdrop-filter:blur(16px);
+
+box-shadow:
+0 12px 30px rgba(0,0,0,.25);
+
+animation:floatRibbon 5s ease-in-out infinite;
+
+z-index:9999;
+}
+
+/* Text */
+
+.ribbon-text{
+color:#fff;
+font-size:16px;
+font-weight:600;
+letter-spacing:2px;
+text-transform:uppercase;
+}
+
+/* Animated Dots */
+
+.ribbon-dot{
+width:12px;
+height:12px;
+
+border-radius:50%;
+background:#fff;
+
+box-shadow:
+0 0 10px #fff,
+0 0 25px rgba(255,255,255,.8);
+
+animation:blink 2s infinite;
+}
+
+.ribbon-dot:last-child{
+animation-delay:1s;
+}
+
+/* Floating */
+
+@keyframes floatRibbon{
+
+0%,100%{
+transform:translateX(-50%) translateY(0);
+}
+
+50%{
+transform:translateX(-50%) translateY(-8px);
+}
+
+}
+
+/* Glow */
+
+@keyframes blink{
+
+0%,100%{
+opacity:.5;
+transform:scale(.8);
+}
+
+50%{
+opacity:1;
+transform:scale(1.3);
+}
+
+}
+
+body{
+padding-bottom:100px;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.footer-ribbon{
+padding:12px 20px;
+gap:10px;
+}
+
+.ribbon-text{
+font-size:13px;
+letter-spacing:1px;
+}
+
+.ribbon-dot{
+width:10px;
+height:10px;
+}
+
+}
+/*BUTTON*/
+.next-btn{
+position:fixed;
+bottom:250px;
+right:600px;
+
+display:inline-flex;
+align-items:center;
+justify-content:center;
+
+padding:14px 30px;
+
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
+
+color:#fff;
+text-decoration:none;
+font-size:1rem;
+font-weight:600;
+letter-spacing:1px;
+
+border-radius:50px;
+
+/* Thick White Border */
+border:3px solid rgba(255,255,255,0.95);
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.25),
+0 0 20px rgba(255,255,255,.18);
+
+transition:.4s ease;
+z-index:9999;
+overflow:hidden;
+
+animation:btnFloat 4s ease-in-out infinite;
+}
+
+/* Hover */
+.next-btn:hover{
+transform:translateY(-6px) scale(1.05);
+
+background:rgba(255,255,255,0.18);
+
+border-color:#ffffff;
+
+box-shadow:
+0 0 18px rgba(255,255,255,.45),
+0 0 35px rgba(255,255,255,.25);
+}
+
+/* Floating */
+@keyframes btnFloat{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-8px);
+}
+}
+
+/* Pulse Ring */
+.next-btn::before{
+content:"";
+position:absolute;
+inset:-8px;
+border-radius:60px;
+
+border:2px solid rgba(255,255,255,.45);
+
+opacity:.5;
+animation:pulseRing 2.5s infinite;
+}
+
+/* Extra Thick Outer Border */
+.next-btn::after{
+content:"";
+position:absolute;
+inset:4px;
+border-radius:45px;
+border:2px solid rgba(255,255,255,.35);
+pointer-events:none;
+}
+
+@keyframes pulseRing{
+0%{
+transform:scale(1);
+opacity:.6;
+}
+100%{
+transform:scale(1.2);
+opacity:0;
+}
+}
+/* ===========================
+   FIXED GLASS HEADER
+=========================== */
+/*=====================================
+        PREMIUM FIXED HEADER
+======================================*/
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:78px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 55px;
+    box-sizing:border-box;
+
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
+
+    border-bottom:1px solid rgba(255,255,255,.18);
+
+    box-shadow:
+    0 8px 30px rgba(0,0,0,.30),
+    inset 0 1px 0 rgba(255,255,255,.15);
+
+    overflow:hidden;
+    z-index:99999;
+}
+
+
+/*=====================================
+              LOGO
+======================================*/
+
+.logo{
+    font-family:'Great Vibes',cursive;
+    font-size:2.5rem;
+    font-weight:700;
+    color:#fff;
+    cursor:pointer;
+
+    text-shadow:
+    0 2px 0 rgba(255,255,255,.30),
+    0 5px 15px rgba(0,0,0,.35),
+    0 0 15px rgba(255,255,255,.45);
+
+    transition:.35s;
+    animation:logoFloat 4s ease-in-out infinite;
+}
+
+.logo:hover{
+    transform:scale(1.08);
+
+    text-shadow:
+    0 0 15px rgba(255,255,255,.8),
+    0 0 30px rgba(255,255,255,.45);
+}
+
+@keyframes logoFloat{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-4px);
+    }
+}
+
+/*=====================================
+          NAVIGATION
+======================================*/
+
+.nav{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.nav a{
+    position:relative;
+
+    padding:10px 22px;
+
+    color:#fff;
+    text-decoration:none;
+
+    font-size:15px;
+    font-weight:600;
+
+    border-radius:30px;
+
+    transition:.35s;
+}
+
+/* Underline Animation */
+.nav a::after{
+    content:"";
+    position:absolute;
+
+    left:50%;
+    bottom:5px;
+
+    width:0;
+    height:2px;
+
+    background:#fff;
+
+    transform:translateX(-50%);
+    transition:.35s;
+}
+
+.nav a:hover{
+
+    background:rgba(255,255,255,.12);
+
+    box-shadow:
+    0 0 15px rgba(255,255,255,.18);
+
+    transform:translateY(-2px);
+}
+
+.nav a:hover::after{
+    width:65%;
+}
+
+/* Active Menu */
+.nav a.active{
+
+    background:rgba(255,255,255,.18);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    box-shadow:
+    0 0 18px rgba(255,255,255,.20);
+}
+
+/* Prevent page content from hiding behind header */
+body{
+    padding-top:78px;
+}
+/* ==========================
+      Ribbon Footer
+========================== */
+
+.footer-ribbon{
+position:fixed;
+bottom:25px;
+left:50%;
+transform:translateX(-50%);
+
+display:flex;
+align-items:center;
+gap:18px;
+
+padding:14px 35px;
+
+background:linear-gradient(
+135deg,
+rgba(255,255,255,.18),
+rgba(255,255,255,.08));
+
+border:1px solid rgba(255,255,255,.18);
+border-radius:100px;
+
+backdrop-filter:blur(16px);
+
+box-shadow:
+0 12px 30px rgba(0,0,0,.25);
+
+animation:floatRibbon 5s ease-in-out infinite;
+
+z-index:9999;
+}
+
+/* Text */
+
+.ribbon-text{
+color:#fff;
+font-size:16px;
+font-weight:600;
+letter-spacing:2px;
+text-transform:uppercase;
+}
+
+/* Animated Dots */
+
+.ribbon-dot{
+width:12px;
+height:12px;
+
+border-radius:50%;
+background:#fff;
+
+box-shadow:
+0 0 10px #fff,
+0 0 25px rgba(255,255,255,.8);
+
+animation:blink 2s infinite;
+}
+
+.ribbon-dot:last-child{
+animation-delay:1s;
+}
+
+/* Floating */
+
+@keyframes floatRibbon{
+
+0%,100%{
+transform:translateX(-50%) translateY(0);
+}
+
+50%{
+transform:translateX(-50%) translateY(-8px);
+}
+
+}
+
+/* Glow */
+
+@keyframes blink{
+
+0%,100%{
+opacity:.5;
+transform:scale(.8);
+}
+
+50%{
+opacity:1;
+transform:scale(1.3);
+}
+
+}
+
+body{
+padding-bottom:100px;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.footer-ribbon{
+padding:12px 20px;
+gap:10px;
+}
+
+.ribbon-text{
+font-size:13px;
+letter-spacing:1px;
+}
+
+.ribbon-dot{
+width:10px;
+height:10px;
+}
+
+}
+/*BIRTHDAT TEXT*/
+.birthday-text{
+margin-top:10px;
+text-align:center;
+font-size:40px;
+font-weight:900;
+letter-spacing:2px;
+text-transform:uppercase;
+
+/* NORMAL CLEAN FONT */
+font-family: 'Poppins', sans-serif;
+
+color:#ffffff;
+
+position:relative;
+
+/* CLEAN 3D WHITE EFFECT */
+text-shadow:
+0 1px 0 #e6e6e6,
+0 2px 0 #d9d9d9,
+0 3px 0 #cccccc,
+0 4px 0 rgba(0,0,0,.15),
+0 10px 20px rgba(0,0,0,.25),
+0 0 18px rgba(255,255,255,.6);
+
+/* ANIMATION */
+animation: textFloat 3.5s ease-in-out infinite,
+           glowWhite 2.8s ease-in-out infinite alternate;
+}
+
+/* SUB TEXT */
+.birthday-text span{
+display:block;
+font-size:16px;
+font-weight:500;
+margin-top:10px;
+letter-spacing:1px;
+
+color:#ffffff;
+opacity:.85;
+
+font-family: 'Poppins', sans-serif;
+
+text-shadow:0 0 10px rgba(255,255,255,.5);
+}
+
+/* FLOAT */
+@keyframes textFloat{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-8px);
+}
+}
+
+/* GLOW */
+@keyframes glowWhite{
+0%{
+filter:drop-shadow(0 0 6px rgba(255,255,255,.3));
+}
+100%{
+filter:drop-shadow(0 0 20px rgba(255,255,255,.8));
+}
+}
+</style>
+</head>
+
+<body>
+<header>
+
+<div class="logo">
+#Love You Manu ❈✦
+</div>
+
+
+
+</header>
+
+<div class="particle" style="left:10%;animation-duration:8s;"></div>
+<div class="particle" style="left:20%;animation-duration:12s;"></div>
+<div class="particle" style="left:35%;animation-duration:10s;"></div>
+<div class="particle" style="left:50%;animation-duration:9s;"></div>
+<div class="particle" style="left:65%;animation-duration:11s;"></div>
+<div class="particle" style="left:80%;animation-duration:8s;"></div>
+<div class="particle" style="left:90%;animation-duration:13s;"></div>
+
+<div class="container">
+
+<div class="card">
+    <div class="bear">ʕっ•ᴥ•ʔっ🎀</div>
+
+    <h1>Pinky Promise...</h1>
+
+   
+    <p>
+        I made this little surprise with all my heart ❤, just for you
+something special is waiting for you Bangaraa✦════
+
+    </p>
+</div>
+    <!-- BUTTON -->
+    <a href="idea.html" class="next-btn">
+        ʕ´•ᴥ•`ʔ♡  ➜
+    </a>
+
+</div>
+</div>
+<footer class="footer-ribbon">
+    <div class="ribbon-dot"></div>
+
+    <div class="ribbon-text">
+       🤍 Forever • Bangaraa • 🤍
+    </div>
+
+    <div class="ribbon-dot"></div>
+</footer>
+</body>
+</html>  

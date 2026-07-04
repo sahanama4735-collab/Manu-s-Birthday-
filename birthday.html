@@ -1,0 +1,438 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Bangaraa 🎂</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+min-height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#050816,#12082f,#240046,#09091f);
+position:relative;
+}
+
+/* Stars */
+body::before{
+content:'';
+position:absolute;
+width:200%;
+height:200%;
+background:
+radial-gradient(circle,#ffffff55 1px,transparent 1px);
+background-size:35px 35px;
+animation:starsMove 60s linear infinite;
+}
+
+@keyframes starsMove{
+from{transform:translateY(0);}
+to{transform:translateY(-500px);}
+}
+
+/* Aurora Glow */
+body::after{
+content:'';
+position:absolute;
+width:700px;
+height:700px;
+background:
+radial-gradient(circle,
+rgba(255,0,255,.25),
+rgba(0,255,255,.15),
+transparent 70%);
+filter:blur(90px);
+animation:aurora 8s ease-in-out infinite alternate;
+}
+
+@keyframes aurora{
+from{transform:translate(-200px,-100px);}
+to{transform:translate(200px,100px);}
+}
+
+/* Particles */
+.particle{
+position:absolute;
+width:6px;
+height:6px;
+background:white;
+border-radius:50%;
+opacity:.7;
+animation:float 10s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh) scale(0);
+}
+100%{
+transform:translateY(-100vh) scale(1);
+}
+}
+
+.container{
+width:90%;
+max-width:1200px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:80px;
+z-index:5;
+}
+
+/* Photo */
+.photo-box{
+position:relative;
+width:320px;
+height:320px;
+flex-shrink:0;
+}
+
+.glow{
+position:absolute;
+width:420px;
+height:420px;
+left:-50px;
+top:-50px;
+border-radius:50%;
+background:
+radial-gradient(circle,
+rgba(255,215,0,.9),
+rgba(255,0,255,.5),
+transparent 70%);
+filter:blur(45px);
+animation:glowPulse 3s infinite alternate;
+}
+
+@keyframes glowPulse{
+from{transform:scale(1);}
+to{transform:scale(1.2);}
+}
+
+.photo{
+width:100%;
+height:100%;
+object-fit:cover;
+border-radius:50%;
+border:6px solid rgba(255,255,255,.4);
+
+box-shadow:
+0 0 20px #fff,
+0 0 40px gold,
+0 0 90px deeppink;
+
+animation:photoFloat 4s ease-in-out infinite;
+}
+
+@keyframes photoFloat{
+50%{
+transform:
+translateY(-20px)
+rotateY(12deg);
+}
+}
+
+/* Content */
+.content{
+flex:1;
+color:white;
+text-align:left;
+}
+
+/* Title */
+.content h1{
+font-family:'Great Vibes',cursive;
+font-size:4rem;
+font-weight:normal;
+margin-bottom:20px;
+color:#ffd700;
+
+text-shadow:
+0 0 10px #fff,
+0 0 20px gold,
+0 0 40px gold,
+0 0 80px gold;
+
+animation:titleGlow 3s infinite alternate;
+}
+
+@keyframes titleGlow{
+from{
+transform:scale(1);
+}
+to{
+transform:scale(1.05);
+}
+}
+
+/* Typing Text */
+.typing{
+font-family:'Great Vibes',cursive;
+font-size:2rem;
+color:white;
+
+white-space:nowrap;
+overflow:hidden;
+width:0;
+
+border-right:3px solid white;
+
+text-shadow:
+0 0 10px rgba(255,255,255,.8),
+0 0 20px rgba(255,255,255,.5);
+
+animation:
+typing 8s steps(100,end) forwards,
+hideCursor 0s linear forwards 8s;
+}
+
+@keyframes typing{
+from{
+width:0;
+}
+to{
+width:50%;
+}
+}
+
+@keyframes hideCursor{
+to{
+border-right:none;
+}
+}
+/* Wishes */
+.wish{
+margin-top:30px;
+font-size:1.15rem;
+line-height:2.1;
+color:#f8f8ff;
+opacity:0;
+animation:showWish 2s forwards;
+animation-delay:8s;
+}
+
+@keyframes showWish{
+to{
+opacity:1;
+}
+}
+
+/* Final Wish */
+.final{
+    margin-top:25px;
+    
+    font-family:'Poppins',sans-serif;
+    font-size:1.8rem;
+    font-weight:600;
+
+    color:WHITE;
+
+    text-shadow:
+    0 0 8px rgba(255,215,0,.7);
+
+    animation:goldGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes goldGlow{
+    from{
+        transform:scale(1);
+        opacity:0.9;
+    }
+    to{
+        transform:scale(1.05);
+        opacity:1;
+    }
+}
+
+/* Mobile */
+@media(max-width:900px){
+
+.container{
+flex-direction:column;
+text-align:center;
+gap:30px;
+}
+
+.content{
+text-align:center;
+}
+
+.content h1{
+font-size:3rem;
+}
+
+.photo-box{
+width:220px;
+height:220px;
+}
+
+.typing{
+font-size:1.3rem;
+}
+
+.wish{
+font-size:.95rem;
+}
+}
+/*BUTTON*/
+.next-btn{
+position:fixed;
+bottom:100px;
+right:950px;
+
+display:inline-flex;
+align-items:center;
+justify-content:center;
+
+padding:14px 30px;
+
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
+
+color:#fff;
+text-decoration:none;
+font-size:1rem;
+font-weight:600;
+letter-spacing:1px;
+
+border-radius:50px;
+
+/* Thick White Border */
+border:3px solid rgba(255,255,255,0.95);
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.25),
+0 0 20px rgba(255,255,255,.18);
+
+transition:.4s ease;
+z-index:9999;
+overflow:hidden;
+
+animation:btnFloat 4s ease-in-out infinite;
+}
+
+/* Hover */
+.next-btn:hover{
+transform:translateY(-6px) scale(1.05);
+
+background:rgba(255,255,255,0.18);
+
+border-color:#ffffff;
+
+box-shadow:
+0 0 18px rgba(255,255,255,.45),
+0 0 35px rgba(255,255,255,.25);
+}
+
+/* Floating */
+@keyframes btnFloat{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-8px);
+}
+}
+
+/* Pulse Ring */
+.next-btn::before{
+content:"";
+position:absolute;
+inset:-8px;
+border-radius:60px;
+
+border:2px solid rgba(255,255,255,.45);
+
+opacity:.5;
+animation:pulseRing 2.5s infinite;
+}
+
+/* Extra Thick Outer Border */
+.next-btn::after{
+content:"";
+position:absolute;
+inset:4px;
+border-radius:45px;
+border:2px solid rgba(255,255,255,.35);
+pointer-events:none;
+}
+
+@keyframes pulseRing{
+0%{
+transform:scale(1);
+opacity:.6;
+}
+100%{
+transform:scale(1.2);
+opacity:0;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="particle" style="left:10%;animation-duration:8s;"></div>
+<div class="particle" style="left:20%;animation-duration:12s;"></div>
+<div class="particle" style="left:35%;animation-duration:10s;"></div>
+<div class="particle" style="left:50%;animation-duration:9s;"></div>
+<div class="particle" style="left:65%;animation-duration:11s;"></div>
+<div class="particle" style="left:80%;animation-duration:8s;"></div>
+<div class="particle" style="left:90%;animation-duration:13s;"></div>
+
+<div class="container">
+
+<div class="photo-box">
+<div class="glow"></div>
+
+<img src="TWO.jpg" class="photo">
+</div>
+
+<div class="content">
+
+<h1>Happy Birthday Bangaraa🎀</h1>
+
+<div class="typing">
+My Dearest Bangaraa 🤍,
+</div>
+
+<div class="wish">
+
+  Happy Birthday to the most precious person in my life😘.You are one of the most special💗blessings in my life✿. Every moment spent with you becomes a beautiful memory🤍 that I cherish deeply🦋.No matter where life takes us🌍🥺, I will always treasure the bond we share🕊️. I hope this birthday becomes one of the most memorable and magical days of your life✨.
+
+<div class="final">
+Once again happiieee badyy manu LOVE YOU ISHTONDUUʕ•́ᴥ•̀ʔっ❤️...
+
+</div>
+
+
+❤️ Forever Yours♾<br>
+
+<a href="LOGIN.html" class="next-btn">
+Swipe Next🤍
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+

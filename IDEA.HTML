@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Brother ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+min-height:100vh;
+background:linear-gradient(180deg,#0b1020,#161b33);
+overflow:hidden;
+color:white;
+text-align:center;
+}
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&display=swap');
+
+h1{
+    margin-top:30px;
+    text-align:center;
+
+  font-family:'Marcellus',serif;
+    font-size:2.1rem;      /* Small Size */
+    font-weight:700;
+    letter-spacing:1px;
+    line-height:1.2;
+
+    /* Gold Gradient */
+    background:linear-gradient(
+        180deg,
+        #fff9dc 0%,
+        #ffe89b 30%,
+        #ffd45c 60%,
+        #d89a1f 100%
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    /* Soft Gold Glow */
+    text-shadow:
+        0 2px 4px rgba(255,215,0,.20),
+        0 0 10px rgba(255,215,0,.25);
+
+    transition:all .3s ease;
+}
+
+h1:hover{
+    transform:translateY(-2px);
+
+    text-shadow:
+        0 4px 8px rgba(255,215,0,.30),
+        0 0 16px rgba(255,215,0,.45);
+}
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
+
+.subtitle{
+    display:inline-block;
+    margin:15px 0 35px;
+
+    font-family:'Petit Formal Script',cursive;
+    font-size:1.3rem;
+    font-weight:400;
+    letter-spacing:0.5px;
+
+    color:#ffffff;
+
+    text-shadow:
+        0 0 8px rgba(255,255,255,.5),
+        0 2px 8px rgba(0,0,0,.25);
+
+    transition:all .3s ease;
+}
+
+.subtitle:hover{
+    transform:translateY(-2px);
+
+    text-shadow:
+        0 0 12px rgba(255,255,255,.8),
+        0 0 20px rgba(255,255,255,.5);
+}
+/* Simple Divider */
+.string{
+    position:absolute;
+    top:160px;
+    left:50%;
+    transform:translateX(-50%);
+    width:70%;
+    height:3px;
+    border-radius:50px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #ffd86b,
+        #fff6d6,
+        #ffd86b,
+        transparent
+    );
+}
+
+.string::before,
+.string::after{
+    content:"♡";
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:16px;
+    color:#ffd86b;
+}
+
+.string::before{
+    left:-10px;
+}
+
+.string::after{
+    right:-10px;
+}
+/*gallery*/
+
+/* ===============================
+          CUTE GALLERY
+================================ */
+
+.gallery{
+    margin-top:120px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:50px;
+    flex-wrap:wrap;
+    padding:20px;
+}
+
+/* ===============================
+          POLAROID
+================================ */
+
+.polaroid{
+    width:240px;
+    height:320px;
+    perspective:1200px;
+    cursor:pointer;
+    animation:float 4s ease-in-out infinite;
+
+    border: 2px solid rgba(255, 182, 193, 0.6);
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 25px rgba(255, 105, 180, 0.25),
+        0 0 15px rgba(255, 192, 203, 0.3);
+}
+
+.polaroid:nth-child(2){
+    animation-delay:.8s;
+}
+
+.polaroid:nth-child(3){
+    animation-delay:1.6s;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+.card{
+    width:100%;
+    height:100%;
+    position:relative;
+    transform-style:preserve-3d;
+    transition:0.9s;
+}
+
+.polaroid:hover .card{
+    transform:rotateY(180deg) scale(1.05);
+}
+
+/* ===============================
+            FRONT & BACK
+================================ */
+
+.front,
+.back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    backface-visibility:hidden;
+    border-radius:24px;
+    overflow:hidden;
+    background:#fff;
+    padding:14px;
+    box-shadow:
+        0 15px 40px rgba(255,105,180,.25),
+        0 8px 18px rgba(0,0,0,.12);
+}
+
+
+/* ===============================
+            PHOTO
+================================ */
+
+.front img{
+    width:100%;
+    height:210px;
+    object-fit:cover;
+    border-radius:16px;
+    transition:.4s;
+}
+
+.polaroid:hover img{
+    transform:scale(1.08);
+}
+
+/* ===============================
+            CAPTION
+================================ */
+
+.front p{
+    margin-top:15px;
+    text-align:center;
+    color:black;
+    font-size:20px;
+    font-weight:700;
+}
+
+/* ===============================
+            BACK
+================================ */
+
+.back{
+    transform:rotateY(180deg);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(135deg,#fff7fb,#ffe8f3);
+    color:#666;
+    font-size:17px;
+    line-height:1.7;
+    padding:25px;
+}
+
+/* ===============================
+          TAPE STICKERS
+================================ */
+
+
+
+.front::after{
+    content:"❀";
+    position:absolute;
+    bottom:18px;
+    right:18px;
+    font-size:24px;
+}
+
+/* ===============================
+            HOVER
+================================ */
+
+.polaroid:hover{
+    transform:translateY(-12px);
+}
+
+.polaroid:hover .front{
+    box-shadow:
+        0 25px 60px rgba(255,105,180,.35);
+}
+
+/* ===============================
+        FINAL CARD
+================================ */
+
+.final{
+    background:linear-gradient(135deg,#fff8e8,#fff1d8);
+}
+.footer{
+margin-top:50px;
+font-size:1.8rem;
+color:#ffd28a;
+}
+
+/*button*/
+/*BUTTON*/
+.next-btn{
+position:fixed;
+bottom:140px;
+right:400px;
+
+display:inline-flex;
+align-items:center;
+justify-content:center;
+
+padding:14px 30px;
+
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
+
+color:#fff;
+text-decoration:none;
+font-size:1rem;
+font-weight:600;
+letter-spacing:1px;
+
+border-radius:50px;
+
+/* Thick White Border */
+border:3px solid rgba(255,255,255,0.95);
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.25),
+0 0 20px rgba(255,255,255,.18);
+
+transition:.4s ease;
+z-index:9999;
+overflow:hidden;
+
+animation:btnFloat 4s ease-in-out infinite;
+}
+
+/* Hover */
+.next-btn:hover{
+transform:translateY(-6px) scale(1.05);
+
+background:rgba(255,255,255,0.18);
+
+border-color:#ffffff;
+
+box-shadow:
+0 0 18px rgba(255,255,255,.45),
+0 0 35px rgba(255,255,255,.25);
+}
+
+/* Floating */
+@keyframes btnFloat{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-8px);
+}
+}
+
+/* Pulse Ring */
+.next-btn::before{
+content:"";
+position:absolute;
+inset:-8px;
+border-radius:60px;
+
+border:2px solid rgba(255,255,255,.45);
+
+opacity:.5;
+animation:pulseRing 2.5s infinite;
+}
+
+/* Extra Thick Outer Border */
+.next-btn::after{
+content:"";
+position:absolute;
+inset:4px;
+border-radius:45px;
+border:2px solid rgba(255,255,255,.35);
+pointer-events:none;
+}
+
+@keyframes pulseRing{
+0%{
+transform:scale(1);
+opacity:.6;
+}
+100%{
+transform:scale(1.2);
+opacity:0;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>୨୧ Every Moment Becomes a Memory ୨୧</h1>
+<div class="subtitle"> ✦ Flip Each Photo To Reveal A Memory ✦</div>
+
+<div class="string"></div>
+
+<div class="gallery">
+
+<div class="polaroid">
+<div class="card">
+<div class="front">
+<img src="anjU.jpg">
+<p>✩°｡⋆ʕっ•ᴥ•ʔっ✩°｡⋆</p>
+</div>
+<div class="back">
+No matter where life takes us,These memories will always bring us back.
+ʕ •ᴥ•ʔ♡
+</div>
+</div>
+</div>
+
+<div class="polaroid">
+<div class="card">
+<div class="front">
+<img src="one.jpg">
+<p>✿ʕ•ᴥ•ʔ✿</p>
+</div>
+<div class="back">
+Distance changes many things,But true memories never change.
+ʕ •ᴥ•ʔ♡
+</div>
+</div>
+</div>
+
+<div class="polaroid">
+<div class="card">
+<div class="front">
+<img src="sneha.jpg">
+<p>𓆩♡𓆪ʕ♡˙ᴥ˙♡ʔ𓆩♡𓆪</p>
+</div>
+<div class="back final">
+Every photo hides A thousand untold emotions.ʕ •ᴥ•ʔ♡
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="footer">
+✧･ﾟ: *✧･ﾟ:* *:･ﾟ✧*:･ﾟ✧✧･ﾟ: *✧･ﾟ:* *:･ﾟ✧*:･ﾟ✧
+</div>
+
+<!-- BUTTON -->
+
+    <a href="FAMILY.html" class="next-btn">
+
+         Swipe Next🤍
+
+    </a>
+
+</body>
+</html> 

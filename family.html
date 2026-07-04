@@ -1,0 +1,777 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Bangaraa 🎂</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+min-height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#050816,#12082f,#240046,#09091f);
+position:relative;
+}
+
+/* Stars */
+body::before{
+content:'';
+position:absolute;
+width:200%;
+height:200%;
+background:
+radial-gradient(circle,#ffffff55 1px,transparent 1px);
+background-size:35px 35px;
+animation:starsMove 60s linear infinite;
+}
+
+@keyframes starsMove{
+from{transform:translateY(0);}
+to{transform:translateY(-500px);}
+}
+
+/* Aurora Glow */
+body::after{
+content:'';
+position:absolute;
+width:700px;
+height:700px;
+background:
+radial-gradient(circle,
+rgba(255,0,255,.25),
+rgba(0,255,255,.15),
+transparent 70%);
+filter:blur(90px);
+animation:aurora 8s ease-in-out infinite alternate;
+}
+
+@keyframes aurora{
+from{transform:translate(-200px,-100px);}
+to{transform:translate(200px,100px);}
+}
+
+
+
+.container{
+width:90%;
+max-width:1200px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:80px;
+z-index:5;
+}
+/*=====================================
+        PREMIUM PHOTO
+======================================*/
+
+/*=====================================
+        PREMIUM CUTE PHOTO
+======================================*/
+
+.photo-box{
+    position:relative;
+    width:340px;
+    height:340px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    animation:floatPhoto 5s ease-in-out infinite;
+}
+
+/* Soft Glow */
+
+.photo-box::before{
+    content:"";
+    position:absolute;
+    width:360px;
+    height:360px;
+    border-radius:50%;
+
+    background:radial-gradient(circle,
+        rgba(255,255,255,.45),
+        rgba(255,192,203,.18),
+        transparent 72%);
+
+    filter:blur(30px);
+
+    animation:pulseGlow 3s ease-in-out infinite alternate;
+}
+
+/* Cute Dotted Ring */
+
+.photo-box::after{
+    content:"";
+    position:absolute;
+    width:335px;
+    height:335px;
+    border-radius:50%;
+
+    border:4px dotted rgba(255,255,255,.95);
+
+    box-shadow:
+        0 0 15px rgba(255,255,255,.45),
+        0 0 35px rgba(255,192,203,.25);
+
+    animation:rotateRing 18s linear infinite;
+}
+
+/* Inner Dashed Ring */
+
+.inner-ring{
+    position:absolute;
+    width:305px;
+    height:305px;
+    border-radius:50%;
+    border:2px dashed rgba(255,255,255,.45);
+
+    animation:rotateReverse 12s linear infinite;
+}
+
+/* Photo */
+
+.photo{
+    width:285px;
+    height:285px;
+    object-fit:cover;
+    border-radius:50%;
+
+    position:relative;
+    z-index:5;
+
+    border:6px solid rgba(255,255,255,.95);
+
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+
+    box-shadow:
+        0 0 20px rgba(255,255,255,.35),
+        0 0 45px rgba(255,182,193,.35);
+
+    transition:.4s;
+}
+
+.photo:hover{
+    transform:scale(1.05);
+
+    box-shadow:
+        0 0 35px rgba(255,255,255,.7),
+        0 0 60px rgba(255,182,193,.45);
+}
+
+/* Floating Cute Sparkles */
+
+.dot{
+    position:absolute;
+    width:10px;
+    height:10px;
+    background:#fff;
+    border-radius:50%;
+
+    box-shadow:
+        0 0 12px white,
+        0 0 25px pink;
+
+    animation:orbit 7s linear infinite;
+}
+
+.dot:nth-child(2){
+    width:8px;
+    height:8px;
+    animation-duration:9s;
+    animation-direction:reverse;
+}
+
+.dot:nth-child(3){
+    width:6px;
+    height:6px;
+    animation-duration:11s;
+}
+
+/* Animations */
+
+@keyframes rotateRing{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+
+@keyframes rotateReverse{
+    from{transform:rotate(360deg);}
+    to{transform:rotate(0deg);}
+}
+
+@keyframes orbit{
+    from{
+        transform:rotate(0deg) translateX(175px) rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg) translateX(175px) rotate(-360deg);
+    }
+}
+
+@keyframes pulseGlow{
+    from{
+        transform:scale(.95);
+        opacity:.6;
+    }
+    to{
+        transform:scale(1.08);
+        opacity:1;
+    }
+}
+
+@keyframes floatPhoto{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-12px);
+    }
+}
+/*BUTTON*/
+.next-btn{
+position:fixed;
+bottom:200px;
+right:350px;
+
+display:inline-flex;
+align-items:center;
+justify-content:center;
+
+padding:14px 30px;
+
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
+
+color:#fff;
+text-decoration:none;
+font-size:1rem;
+font-weight:600;
+letter-spacing:1px;
+
+border-radius:50px;
+
+/* Thick White Border */
+border:3px solid rgba(255,255,255,0.95);
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.25),
+0 0 20px rgba(255,255,255,.18);
+
+transition:.4s ease;
+z-index:9999;
+overflow:hidden;
+
+animation:btnFloat 4s ease-in-out infinite;
+}
+
+/* Hover */
+.next-btn:hover{
+transform:translateY(-6px) scale(1.05);
+
+background:rgba(255,255,255,0.18);
+
+border-color:#ffffff;
+
+box-shadow:
+0 0 18px rgba(255,255,255,.45),
+0 0 35px rgba(255,255,255,.25);
+}
+
+/* Floating */
+@keyframes btnFloat{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-8px);
+}
+}
+
+/* Pulse Ring */
+.next-btn::before{
+content:"";
+position:absolute;
+inset:-8px;
+border-radius:60px;
+
+border:2px solid rgba(255,255,255,.45);
+
+opacity:.5;
+animation:pulseRing 2.5s infinite;
+}
+
+/* Extra Thick Outer Border */
+.next-btn::after{
+content:"";
+position:absolute;
+inset:4px;
+border-radius:45px;
+border:2px solid rgba(255,255,255,.35);
+pointer-events:none;
+}
+
+@keyframes pulseRing{
+0%{
+transform:scale(1);
+opacity:.6;
+}
+100%{
+transform:scale(1.2);
+opacity:0;
+}
+}
+/* ===========================
+   FIXED GLASS HEADER
+=========================== */
+/*=====================================
+        PREMIUM FIXED HEADER
+======================================*/
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:78px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 55px;
+    box-sizing:border-box;
+
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
+
+    border-bottom:1px solid rgba(255,255,255,.18);
+
+    box-shadow:
+    0 8px 30px rgba(0,0,0,.30),
+    inset 0 1px 0 rgba(255,255,255,.15);
+
+    overflow:hidden;
+    z-index:99999;
+}
+
+
+/*=====================================
+              LOGO
+======================================*/
+
+.logo{
+    font-family:'Great Vibes',cursive;
+    font-size:2.5rem;
+    font-weight:700;
+    color:#fff;
+    cursor:pointer;
+
+    text-shadow:
+    0 2px 0 rgba(255,255,255,.30),
+    0 5px 15px rgba(0,0,0,.35),
+    0 0 15px rgba(255,255,255,.45);
+
+    transition:.35s;
+    animation:logoFloat 4s ease-in-out infinite;
+}
+
+.logo:hover{
+    transform:scale(1.08);
+
+    text-shadow:
+    0 0 15px rgba(255,255,255,.8),
+    0 0 30px rgba(255,255,255,.45);
+}
+
+@keyframes logoFloat{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-4px);
+    }
+}
+
+/*=====================================
+          NAVIGATION
+======================================*/
+
+.nav{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.nav a{
+    position:relative;
+
+    padding:10px 22px;
+
+    color:#fff;
+    text-decoration:none;
+
+    font-size:15px;
+    font-weight:600;
+
+    border-radius:30px;
+
+    transition:.35s;
+}
+
+/* Underline Animation */
+.nav a::after{
+    content:"";
+    position:absolute;
+
+    left:50%;
+    bottom:5px;
+
+    width:0;
+    height:2px;
+
+    background:#fff;
+
+    transform:translateX(-50%);
+    transition:.35s;
+}
+
+.nav a:hover{
+
+    background:rgba(255,255,255,.12);
+
+    box-shadow:
+    0 0 15px rgba(255,255,255,.18);
+
+    transform:translateY(-2px);
+}
+
+.nav a:hover::after{
+    width:65%;
+}
+
+/* Active Menu */
+.nav a.active{
+
+    background:rgba(255,255,255,.18);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    box-shadow:
+    0 0 18px rgba(255,255,255,.20);
+}
+
+/* Prevent page content from hiding behind header */
+body{
+    padding-top:78px;
+}
+/* ==========================
+      Ribbon Footer
+========================== */
+
+.footer-ribbon{
+position:fixed;
+bottom:25px;
+left:50%;
+transform:translateX(-50%);
+
+display:flex;
+align-items:center;
+gap:18px;
+
+padding:14px 35px;
+
+background:linear-gradient(
+135deg,
+rgba(255,255,255,.18),
+rgba(255,255,255,.08));
+
+border:1px solid rgba(255,255,255,.18);
+border-radius:100px;
+
+backdrop-filter:blur(16px);
+
+box-shadow:
+0 12px 30px rgba(0,0,0,.25);
+
+animation:floatRibbon 5s ease-in-out infinite;
+
+z-index:9999;
+}
+
+/* Text */
+
+.ribbon-text{
+color:#fff;
+font-size:16px;
+font-weight:600;
+letter-spacing:2px;
+text-transform:uppercase;
+}
+
+/* Animated Dots */
+
+.ribbon-dot{
+width:12px;
+height:12px;
+
+border-radius:50%;
+background:#fff;
+
+box-shadow:
+0 0 10px #fff,
+0 0 25px rgba(255,255,255,.8);
+
+animation:blink 2s infinite;
+}
+
+.ribbon-dot:last-child{
+animation-delay:1s;
+}
+
+/* Floating */
+
+@keyframes floatRibbon{
+
+0%,100%{
+transform:translateX(-50%) translateY(0);
+}
+
+50%{
+transform:translateX(-50%) translateY(-8px);
+}
+
+}
+
+/* Glow */
+
+@keyframes blink{
+
+0%,100%{
+opacity:.5;
+transform:scale(.8);
+}
+
+50%{
+opacity:1;
+transform:scale(1.3);
+}
+
+}
+
+body{
+padding-bottom:100px;
+}
+
+/* Wishes */
+.wish{
+    margin-top:30px;
+    font-size:1.15rem;
+    line-height:2.1;
+    color:#f8f8ff;
+
+    text-align:justify;
+    text-indent:50px;   /* Tab space at the beginning */
+
+    opacity:0;
+    animation:showWish 2s forwards;
+    animation-delay:0s;
+}
+
+@keyframes showWish{
+    to{
+        opacity:1;
+    }
+}
+
+/* Final Wish */
+.final{
+    margin-top:25px;
+    
+    font-family:'Poppins',sans-serif;
+    font-size:1.8rem;
+    font-weight:600;
+
+    color:WHITE;
+
+    text-shadow:
+    0 0 8px rgba(255,215,0,.7);
+
+    animation:goldGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes goldGlow{
+    from{
+        transform:scale(1);
+        opacity:0.9;
+    }
+    to{
+        transform:scale(1.05);
+        opacity:1;
+    }
+}
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.footer-ribbon{
+padding:12px 20px;
+gap:10px;
+}
+
+.ribbon-text{
+font-size:13px;
+letter-spacing:1px;
+}
+
+.ribbon-dot{
+width:10px;
+height:10px;
+}
+
+}
+/*BIRTHDAT TEXT*/
+.birthday-text{
+margin-top:10px;
+text-align:center;
+font-size:40px;
+font-weight:900;
+letter-spacing:2px;
+text-transform:uppercase;
+
+/* NORMAL CLEAN FONT */
+font-family: 'Poppins', sans-serif;
+
+color:#ffffff;
+
+position:relative;
+
+/* CLEAN 3D WHITE EFFECT */
+text-shadow:
+0 1px 0 #e6e6e6,
+0 2px 0 #d9d9d9,
+0 3px 0 #cccccc,
+0 4px 0 rgba(0,0,0,.15),
+0 10px 20px rgba(0,0,0,.25),
+0 0 18px rgba(255,255,255,.6);
+
+/* ANIMATION */
+animation: textFloat 3.5s ease-in-out infinite,
+           glowWhite 2.8s ease-in-out infinite alternate;
+}
+
+/* SUB TEXT */
+.birthday-text span{
+display:block;
+font-size:16px;
+font-weight:500;
+margin-top:10px;
+letter-spacing:1px;
+
+color:#ffffff;
+opacity:.85;
+
+font-family: 'Poppins', sans-serif;
+
+text-shadow:0 0 10px rgba(255,255,255,.5);
+}
+
+/* FLOAT */
+@keyframes textFloat{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-8px);
+}
+}
+
+/* GLOW */
+@keyframes glowWhite{
+0%{
+filter:drop-shadow(0 0 6px rgba(255,255,255,.3));
+}
+100%{
+filter:drop-shadow(0 0 20px rgba(255,255,255,.8));
+}
+}
+</style>
+</head>
+
+<body>
+<header>
+
+<div class="logo">
+#Memory 
+</div>
+
+
+
+</header>
+
+<div class="particle" style="left:10%;animation-duration:8s;"></div>
+<div class="particle" style="left:20%;animation-duration:12s;"></div>
+<div class="particle" style="left:35%;animation-duration:10s;"></div>
+<div class="particle" style="left:50%;animation-duration:9s;"></div>
+<div class="particle" style="left:65%;animation-duration:11s;"></div>
+<div class="particle" style="left:80%;animation-duration:8s;"></div>
+<div class="particle" style="left:90%;animation-duration:13s;"></div>
+
+<div class="container">
+
+<div class="photo-box">
+ <span class="dot"></span>
+    <span class="dot"></span>
+<div class="glow"></div>
+<img src="amma.jpg" class="photo">
+</div>
+<div class="wish">
+ A father and son may walk different paths👨‍👦❤️ but their hearts will always find their way back to each other. 🫂 No matter how far life takes a son🥺🌍, his father's love is always with him, giving him strength, hope, and courage. 💙👣 Every lesson, every smile, and every moment they share becomes a beautiful memory that stays in a son's heart forever. 📸✨ A father's love is quiet but endless, and it remains a son's greatest comfort through every stage of life. 🤍🏡 No distance, no time, and no challenge can ever break the beautiful bond they share. 🌍💖
+
+<div class="final">
+Forever Dad's Little Boyʕ•́ᴥ•̀ʔっ❤️...
+
+</div>
+
+
+
+</div>
+
+
+
+    <!-- BUTTON -->
+    <a href="THANKS.html" class="next-btn">
+        SWIPE NEXT🤍
+    </a>
+
+</div>
+</div>
+<footer class="footer-ribbon">
+    <div class="ribbon-dot"></div>
+
+    <div class="ribbon-text">
+       🤍 Forever • Bangaraa • 🤍
+    </div>
+
+    <div class="ribbon-dot"></div>
+</footer>
+</body>
+</html>  
